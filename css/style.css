@@ -1531,7 +1531,7 @@ footer {
   box-sizing: border-box;
 }
 
-footer a {
+footer p {
   color: white;
   text-decoration: underline;
   word-break: break-all; /* 让邮箱地址在小屏设备上断行 */
