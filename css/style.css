@@ -1519,6 +1519,30 @@ span.menu {
 	position: relative;
 	min-width: 320px; /* 设置最小宽度防止过窄 */
   }
+
+footer {
+  background-color: #2e7d32; /* 绿色背景 */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+
+footer a {
+  color: white;
+  text-decoration: underline;
+  word-break: break-all; /* 让邮箱地址在小屏设备上断行 */
+}
+
+@media (max-width: 480px) {
+  footer {
+    font-size: 14px;
+    padding: 15px 10px;
+  }
+}
   
  
 
