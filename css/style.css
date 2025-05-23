@@ -1503,46 +1503,55 @@ span.menu {
 		font-size: .875em;
 	}
 }
-/* 在现有CSS中添加 */
-.f-address .email-wrap {
-    white-space: nowrap; /* 强制不换行 */
-    display: inline-block; /* 保持行内特性 */
-}
-/* 原CSS中的.footer-info部分修改 */
-.footer-info {
-	background: #1CD5B5;
-	width: 36%;
-	margin: 6em auto 0;
-	padding: 3em 1.5em; /* 增加左右内边距 */
-	box-sizing: border-box; /* 确保内边距不撑大容器 */
-	text-align: center;
-	position: relative;
-	min-width: 320px; /* 设置最小宽度防止过窄 */
-  }
-
-footer {
-  background-color: #2e7d32; /* 绿色背景 */
-  color: white;
-  padding: 20px;
-  text-align: center;
-  font-size: 16px;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  box-sizing: border-box;
-}
-
-footer p {
-  color: white;
-  text-decoration: underline;
-  word-break: break-all; /* 让邮箱地址在小屏设备上断行 */
-}
-
-@media (max-width: 480px) {
-  footer {
-    font-size: 14px;
-    padding: 15px 10px;
-  }
-}
   
- 
 
+/* 基础样式 */
+.contact-info {
+	line-height: 1.6;
+	margin: 1em 0;
+  }
+  
+  .email-link {
+	color: #fff;
+	text-decoration: none;
+	border-bottom: 1px dotted rgba(255,255,255,0.5);
+	transition: 0.3s;
+  }
+  
+  /* 默认允许换行 */
+  .email-link {
+	white-space: normal;
+	word-break: break-word; /* 允许在长单词中间换行 */
+  }
+  
+  /* 宽屏时保持不换行 */
+  @media (min-width: 768px) {
+	.email-link {
+	  white-space: nowrap; /* 大屏幕强制不换行 */
+	  display: inline-block; /* 防止下划线断开 */
+	}
+  }
+  
+  /* 窄屏优化 */
+  @media (max-width: 480px) {
+	.contact-info {
+	  padding: 0 15px; /* 增加两侧留白 */
+	}
+	.address {
+	  display: block; /* 地址单独成行 */
+	  margin-bottom: 0.5em;
+	}
+  }
+
+  .email-link {
+	hyphens: auto; /* 允许连字符换行 */
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+  }
+  
+  /* 兼容处理 */
+  @supports not (hyphens: auto) {
+	.email-link {
+	  word-break: break-all; /* 兼容旧浏览器 */
+	}
+  }
